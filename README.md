@@ -10,7 +10,7 @@ travl:
 Rob Williams: [Github](https://github.com/RobWilliams0615)
 [Email](robwilliams0221@gmail.com) [LinkedIn](https://www.linkedin.com/in/robmwilliamsiii/)
 
-
+[Trello](https://trello.com/b/8Erk4vjl/travl)
 ---
 
 ### **Description**
@@ -25,7 +25,7 @@ I have used django for the backend and React for the front end.
 
 Entity Relationship Diagram ![ERD](https://whimsical.com/travl-5BxZXdPreFZx4dhiZU7yhd)
 
-Component Hierarchy Diagram ![Hierarchy Diagram](https://i.imgur.com/bA2yW3J.png)
+Component Hierarchy Diagram ![Hierarchy Diagram](https://whimsical.com/UcgyVrzjCxXFvZF6dGQr1M)
 
 ---
 
