@@ -13,21 +13,21 @@ function App() {
   const getLocations = async () => {
     const response = await axios.get('http://localhost:8000/locations/');
     // setLocations(response.data);
-    console.log('locations', response.data);
+    // console.log('locations', response.data);
   };
   getLocations();
 
   const getUsers = async () => {
     const response = await axios.get('http://localhost:8000/users/');
     // setUsers(response);
-    console.log('users', response.data);
+    // console.log('users', response.data);
   };
   getUsers();
 
   const getFacilities = async () => {
     const response = await axios.get('http://localhost:8000/facilities/');
     //setFacilities(response)
-    console.log('facilities', response.data);
+    // console.log('facilities', response.data);
   };
   getFacilities();
   return (
