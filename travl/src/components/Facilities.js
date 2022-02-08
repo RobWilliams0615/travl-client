@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 
 const Facilities = () => {
   const [facilities, setFacilities] = useState([]);
@@ -13,6 +14,8 @@ const Facilities = () => {
 return (
   <div>
     <h2>Facilities</h2>
+    <div className="fac-list"></div>
+    <div className="fac-details"></div>
   </div>
 );
 
