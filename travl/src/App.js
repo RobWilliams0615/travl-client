@@ -9,18 +9,11 @@ import Nav from './components/Nav';
 // import { Route } from 'react-router-dom';
 
 function App() {
-  const [locations, setLocations] = useState([]);
+  const [locations] = useState([]);
   // const [users, setUsers] = useState([]);
-  const [facilities, setFacilities] = useState([]);
+  const [facilities] = useState([]);
   // const [hasError, setErrors] = useState(false);
   useEffect(() => {
-    const getLocations = async () => {
-      const response = await axios.get('http://localhost:8000/locations/');
-      setLocations(response.data[0]);
-      // console.log('locations', response.data[0]);
-    };
-    getLocations();
-
     // const getUsers = async () => {
     //   const response = await axios.get('http://localhost:8000/users/');
     //   // setUsers(response);

@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Locations = (props) => {
-  console.log('props', props);
+function Locations() {
+  const [locations, setLocations] = useState([]);
+  useEffect(() => {
+    const getLocations = async () => {
+      const response = await axios.get('http://localhost:8000/locations/');
+      setLocations(response.data);
+      // console.log('locations', response.data);
+    };
+    getLocations();
+  }, []);
   return (
     <div>
-      <h2>Locations</h2>
+      <h2>Facilities</h2>
       <div className="loc-list">
-        <h3>{props.locations.country}</h3>
-        <h3>{props.locations.state}</h3>
-        <h3>{props.locations.city}</h3>
-        {/* <h3>{props.locations.address}</h3> */}
+        {locations.map((locations) => (
+          <ul>
+            <li>{locations.city}</li>
+            <li>{locations.state}</li>
+            <li>{locations.country}</li>
+          </ul>
+        ))}
       </div>
       <div className="loc-details"></div>
     </div>
   );
-};
+}
 export default Locations;

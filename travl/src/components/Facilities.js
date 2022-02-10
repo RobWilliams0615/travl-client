@@ -3,14 +3,12 @@ import axios from 'axios';
 
 function Facilities() {
   const [facilities, setFacilities] = useState([]);
-  // console.log('props', props);
-  // USE SNOWBOARD mountain trails project as template for mapping
   // check crud from previous projects
   useEffect(() => {
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
       setFacilities(response.data);
-      console.log('facilities', response.data);
+      // console.log('facilities', response.data);
     };
     getFacilities();
   }, []);
