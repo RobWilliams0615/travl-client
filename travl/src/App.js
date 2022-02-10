@@ -6,22 +6,13 @@ import './App.css';
 import Facilities from './components/Facilities';
 import Locations from './components/Locations';
 import Nav from './components/Nav';
+import Users from './components/Users';
 // import { Route } from 'react-router-dom';
 
 function App() {
   const [locations] = useState([]);
-  // const [users, setUsers] = useState([]);
+  const [users] = useState([]);
   const [facilities] = useState([]);
-  // const [hasError, setErrors] = useState(false);
-  useEffect(() => {
-    // const getUsers = async () => {
-    //   const response = await axios.get('http://localhost:8000/users/');
-    //   // setUsers(response);
-    //   console.log('users', response.data);
-    // };
-    // getUsers();
-  }, []);
-
   return (
     <div className="App">
       <header className="App-header">
@@ -31,6 +22,7 @@ function App() {
       <div>
         <Facilities facilities={facilities} />
         <Locations locations={locations} />
+        <Users users={users} />
       </div>
       {/* <div>{facilities[0].name}</div> */}
     </div>

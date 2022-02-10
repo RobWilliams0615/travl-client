@@ -8,7 +8,6 @@ function Facilities() {
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
       setFacilities(response.data);
-      // console.log('facilities', response.data);
     };
     getFacilities();
   }, []);
@@ -30,7 +29,6 @@ function Facilities() {
           </ul>
         ))}
       </div>
-      <div className="fac-details"></div>
     </div>
   );
 }

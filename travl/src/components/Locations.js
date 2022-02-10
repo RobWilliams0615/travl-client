@@ -7,13 +7,12 @@ function Locations() {
     const getLocations = async () => {
       const response = await axios.get('http://localhost:8000/locations/');
       setLocations(response.data);
-      // console.log('locations', response.data);
     };
     getLocations();
   }, []);
   return (
     <div>
-      <h2>Facilities</h2>
+      <h2>Locations</h2>
       <div className="loc-list">
         {locations.map((locations) => (
           <ul>
@@ -23,7 +22,6 @@ function Locations() {
           </ul>
         ))}
       </div>
-      <div className="loc-details"></div>
     </div>
   );
 }
