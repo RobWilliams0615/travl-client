@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Facilities from './components/Facilities';
 import Locations from './components/Locations';
-// import Nav from './components/Nav';
+import Nav from './components/Nav';
 // import { Route } from 'react-router-dom';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     const getLocations = async () => {
       const response = await axios.get('http://localhost:8000/locations/');
       setLocations(response.data[0]);
-      console.log('locations', response.data[0]);
+      // console.log('locations', response.data[0]);
     };
     getLocations();
 
@@ -30,8 +30,8 @@ function App() {
 
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
-      setFacilities(response.data[0]);
-      console.log('facilities', response.data[0]);
+      setFacilities(response.data);
+      console.log('facilities', response.data);
     };
     getFacilities();
   }, []);
@@ -39,6 +39,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Nav className="nav-bar" />
         <h1>Welcome to the Travl App</h1>
       </header>
       <div>

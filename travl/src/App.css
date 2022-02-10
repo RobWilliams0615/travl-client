@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -13,7 +15,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,6 +24,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+.navbar {
+  background: rgb(42, 227, 42);
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+  position: fixed;
 }
 
 .App-link {
