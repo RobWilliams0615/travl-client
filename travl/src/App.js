@@ -39,8 +39,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Nav className="nav-bar" />
+        <Nav />
         <h1>Welcome to the Travl App</h1>
+        {facilities.map((facilities) => (
+          <ul>
+            <li>{facilities.name}</li>
+            <li>{facilities.details}</li>
+            <li>{facilities.photo_url}</li>
+            <li>{facilities.address}</li>
+            <li>{facilities.phone}</li>
+            <li>{facilities.email}</li>
+            <li>{facilities.acc_entrance}</li>
+            <li>{facilities.acc_restroom}</li>
+            <li>{facilities.open_now}</li>
+          </ul>
+        ))}
       </header>
       <div>
         <Facilities facilities={facilities} />

@@ -10,12 +10,14 @@ const Facilities = (props) => {
       <h2>Facilities</h2>
       <div className="fac-list">
         <h3>{props.facilities.name}</h3>
-        {/* {facilities.map((fac, id) => (
-          <h3 key={idx}>{rest}</h3>
-        ))} */}
+
+        {facilities.map((fac, id) => (
+          <h3 key={id}>{fac}</h3>
+        ))}
         <h3>{props.facilities.details}</h3>
         <h3>{props.facilities.photo_url}</h3>
         <h3>{props.facilities.address}</h3>
+
         <h3>{props.facilities.phone}</h3>
         <h3>{props.facilities.email}</h3>
         <h3>{props.facilities.parking_info}</h3>
