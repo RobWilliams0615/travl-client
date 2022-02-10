@@ -1,32 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Facilities = (props) => {
+function Facilities() {
   const [facilities, setFacilities] = useState([]);
-  console.log('props', props);
+  // console.log('props', props);
   // USE SNOWBOARD mountain trails project as template for mapping
   // check crud from previous projects
+  useEffect(() => {
+    const getFacilities = async () => {
+      const response = await axios.get('http://localhost:8000/facilities/');
+      setFacilities(response.data);
+      console.log('facilities', response.data);
+    };
+    getFacilities();
+  }, []);
   return (
     <div>
       <h2>Facilities</h2>
       <div className="fac-list">
-        <h3>{props.facilities.name}</h3>
-
-        {facilities.map((fac, id) => (
-          <h3 key={id}>{fac}</h3>
+        {facilities.map((facilities) => (
+          <ul>
+            <li>{facilities.name}</li>
+            <li>{facilities.details}</li>
+            <li>{facilities.photo_url}</li>
+            <li>{facilities.address}</li>
+            <li>{facilities.phone}</li>
+            <li>{facilities.email}</li>
+            <li>{facilities.acc_entrance}</li>
+            <li>{facilities.acc_restroom}</li>
+            <li>{facilities.open_now}</li>
+          </ul>
         ))}
-        <h3>{props.facilities.details}</h3>
-        <h3>{props.facilities.photo_url}</h3>
-        <h3>{props.facilities.address}</h3>
-
-        <h3>{props.facilities.phone}</h3>
-        <h3>{props.facilities.email}</h3>
-        <h3>{props.facilities.parking_info}</h3>
-        <h3>{props.facilities.acc_entrance}</h3>
-        <h3>{props.facilities.acc_restroom}</h3>
-        <h3>{props.facilities.open_now}</h3>
       </div>
       <div className="fac-details"></div>
     </div>
   );
-};
+}
 export default Facilities;
