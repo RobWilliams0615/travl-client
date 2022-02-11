@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Facilities from './Facilities';
 
-const Facility = (props) => {
+const AddFacility = (props) => {
   console.log(props);
   const [facilities] = useState([]);
   const [newFacility, setNewFacility] = useState({
@@ -15,7 +15,8 @@ const Facility = (props) => {
     parking_info: '',
     acc_entrance: false,
     acc_restroom: false,
-    open_now: false
+    open_now: false,
+    user_id: 1
   });
   // console.log(newFacility);
   const [validate, setValidate] = useState('');
@@ -36,13 +37,15 @@ const Facility = (props) => {
     ) {
       setValidate('Fields Required');
     } else {
+      console.log(newFacility);
       const response = await axios.post(
         `http://localhost:8000/facilities/`,
         newFacility
       );
       const resp = await axios.get('http://localhost:8000/facilities/');
-      let pushedEl = resp.data.facilities.slice(-1)[0].id;
-      props.history.push(`/http:/localhost:8000/facilities/${pushedEl}`);
+      console.log(resp);
+      let pushedEl = resp.data.slice(-1)[0].id;
+      props.history.push(`http://localhost:8000/facilities/${pushedEl}`);
       window.location.reload();
     }
   };
@@ -57,7 +60,7 @@ const Facility = (props) => {
   // let id = props.match.params.id;
   const delFacility = async () => {
     const response =
-      await axios.delete`http://localhost:8000/facilities/${response.data.facilities.id}`();
+      await axios.delete`http://localhost:8000/facilities/${response.data.facilities.id}`;
     window.location.reload();
   };
 
@@ -173,4 +176,4 @@ const Facility = (props) => {
   );
 };
 
-export default Facility;
+export default AddFacility;

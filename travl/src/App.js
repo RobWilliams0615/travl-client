@@ -7,11 +7,12 @@ import Facilities from './components/Facilities';
 import Locations from './components/Locations';
 import Nav from './components/Nav';
 import Users from './components/Users';
-import Facility from './components/AddFacility';
+import AddFacility from './components/AddFacility';
 import Footer from './components/Footer';
-// import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+function App(props) {
+  console.log(props);
   const [locations] = useState([]);
   const [users] = useState([]);
   const [facilities] = useState([]);
@@ -27,13 +28,15 @@ function App() {
         {/* <h1>Welcome to the Travl App</h1> */}
       </header>
       <div>
-        <Facilities facilities={facilities} />
-        <button className="facility-btn" onClick={delFacility}>
-          Delete Facility
-        </button>
-        <Locations locations={locations} />
-        <Users users={users} />
-        <Facility />
+        <Routes>
+          {/* <button className="facility-btn" onClick={delFacility}>
+            Delete Facility
+          </button> */}
+          <Route path="/" element={<App />} exact />
+          <Route path="/facilities" element={<Facilities />} exact />
+          <Route path="/locations" element={<Locations />} exact />
+          <Route path="/addFacility" element={<AddFacility />} exact />
+        </Routes>
         <Footer />
       </div>
       {/* <div>{facilities[0].name}</div> */}
