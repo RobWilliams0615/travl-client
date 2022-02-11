@@ -3,7 +3,6 @@ import axios from 'axios';
 
 function Facilities(props) {
   console.log(props);
-  const [facilities, setFacilities] = useState([]);
   const [val, setVal] = useState('');
   const [newFacility, setNewFacility] = useState({
     name: '',
@@ -16,40 +15,38 @@ function Facilities(props) {
     acc_restroom: false,
     open_now: false
   });
-  const showFacility = (facilities) => {
-    props.history.push(`/facilities/${facilities.id}`);
+  const showFacility = (facility) => {
+    props.history.push(`/facilities/${facility.id}`);
   };
-  // check crud from previous projects
-  useEffect(() => {
-    const getFacilities = async () => {
-      const response = await axios.get('http://localhost:8000/facilities/');
-      setFacilities(response.data);
-      console.log(response);
-    };
-    getFacilities();
-  }, []);
-  const delFacility = async () => {
-    const response =
-      await axios.delete`http://localhost:8000/facilities/${props.match.params.id}`();
+
+  const delFacility = async (facility) => {
+    const response = await axios.delete(
+      `http://localhost:8000/facilities/${facility.id}`
+    );
     window.location.reload();
-    console.log(response);
   };
   return (
     <div className="fac-container">
-      <div className="fac-list" onClick={() => showFacility(facilities)}>
-        {facilities.map((facilities) => (
+      <div className="fac-list">
+        {props.facilities.map((facility) => (
           <ul>
-            <li className="fac-name">{facilities.name}</li>
-            <img src={facilities.photo_url} />
-            <li>{facilities.details}</li>
-            <li>{facilities.photo_url}</li>
-            <li>{facilities.address}</li>
-            <li>{facilities.phone}</li>
-            <li>{facilities.email}</li>
-            <li>{facilities.acc_entrance}</li>
-            <li>{facilities.acc_restroom}</li>
-            <li>{facilities.open_now}</li>
-            <button className="facility-btn" onClick={delFacility}>
+            <li className="fac-name">{facility.name}</li>
+            <img src={facility.photo_url} />
+            <li>{facility.details}</li>
+            <li>{facility.photo_url}</li>
+            <li>{facility.address}</li>
+            <li>{facility.phone}</li>
+            <li>{facility.email}</li>
+            <li>{facility.acc_entrance}</li>
+            <li>{facility.acc_restroom}</li>
+            <li>{facility.open_now}</li>
+            <button className="dtl-btn" onClick={() => showFacility(facility)}>
+              Details
+            </button>
+            <button
+              className="facility-btn"
+              onClick={() => delFacility(facility)}
+            >
               Delete Facility
             </button>
           </ul>

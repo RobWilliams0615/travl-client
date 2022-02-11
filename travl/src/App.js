@@ -13,6 +13,16 @@ import { Route, Switch } from 'react-router-dom';
 import FacilityDetails from './components/FacilityDetails';
 
 function App() {
+  const [facilities, setFacilities] = useState([]);
+
+  useEffect(() => {
+    const getFacilities = async () => {
+      const response = await axios.get('http://localhost:8000/facilities/');
+      setFacilities(response.data);
+    };
+    getFacilities();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,14 +31,18 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={<App />} />
-          {/* <Route exact path="/" component={(props) => <App {...props} />} /> */}
           <Route
+            exact
             path="/facilities"
-            component={(props) => <Facilities {...props} />}
+            component={(props) => (
+              <Facilities {...props} facilities={facilities} />
+            )}
           />
           <Route
             path="/facilities/:id"
-            component={(props) => <FacilityDetails {...props} />}
+            component={(props) => (
+              <FacilityDetails {...props} facilities={facilities} />
+            )}
           />
           <Route
             path="/locations"

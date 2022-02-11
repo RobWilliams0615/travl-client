@@ -6,16 +6,16 @@ function FacilityDetails(props) {
 
   useEffect(() => {
     let selectedFacility = props.facilities.find(
-      (facilities) => facilities.id === parseInt(props.match.params.id)
+      (facility) => facility.id === parseInt(props.match.params.id)
     );
     setFacility(selectedFacility);
-    // console.log(facilities);
   }, []);
-
-  return (
+  // restructure html for details
+  // update fac function
+  return selectedFacility ? (
     <div className="detail">
       <div className="detail-header">
-        <img src={selectedFacility.img} alt={selectedFacility.name} />
+        <img src={selectedFacility.photo_url} alt={selectedFacility.name} />
         <div
           style={{
             minWidth: '30em',
@@ -36,7 +36,8 @@ function FacilityDetails(props) {
         {/* <p>{selectedBoat.description}</p> */}
       </div>
     </div>
-  );
+  ) : // update facility button  renders form component componenet
+  null;
 }
 
 export default FacilityDetails;
