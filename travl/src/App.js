@@ -33,7 +33,7 @@ function App() {
         </button>
         <Locations locations={locations} />
         <Users users={users} />
-        {/* <Facility /> */}
+        <Facility />
         <Footer />
       </div>
       {/* <div>{facilities[0].name}</div> */}

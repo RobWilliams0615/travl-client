@@ -16,6 +16,9 @@
 }
 .fac-container {
   margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .App-header {
   background: rgb(40, 93, 172);
@@ -38,7 +41,38 @@
 .App-link {
   color: #61dafb;
 }
+.fac-list {
+  text-align: center;
+}
 
+.fac-name {
+  font-size: larger;
+  font-weight: bolder;
+}
+li {
+  list-style-type: none;
+}
+
+.create-form {
+  max-width: 500px;
+  max-height: 100%;
+  margin-top: 5%;
+  padding: 2rem;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 50%;
+  background-color: rgba(220, 230, 247, 0.4);
+  display: inline-block !important;
+  border-radius: 25px;
+}
+.create-form input {
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5px;
+}
 .footer {
   background: rgb(40, 93, 172);
   height: 10px;

@@ -26,11 +26,12 @@ function Facilities() {
 
   return (
     <div className="fac-container">
-      <h2>Facilities</h2>
+      {/* <h2>Facilities</h2> */}
       <div className="fac-list">
+        {/* <h2 className="fac-titl">Facilities</h2> */}
         {facilities.map((facilities) => (
           <ul>
-            <li>{facilities.name}</li>
+            <li className="fac-name">{facilities.name}</li>
             <li>{facilities.details}</li>
             <li>{facilities.photo_url}</li>
             <li>{facilities.address}</li>
