@@ -15,8 +15,8 @@ const AddFacility = (props) => {
     parking_info: '',
     acc_entrance: false,
     acc_restroom: false,
-    open_now: false,
-    user_id: 1
+    open_now: false
+    // user_id: 1
   });
   // console.log(newFacility);
   const [validate, setValidate] = useState('');
