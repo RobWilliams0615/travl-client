@@ -8,6 +8,7 @@ import Locations from './components/Locations';
 import Nav from './components/Nav';
 import Users from './components/Users';
 import Facility from './components/AddFacility';
+import Footer from './components/Footer';
 // import { Route } from 'react-router-dom';
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
         </button>
         <Locations locations={locations} />
         <Users users={users} />
-        <Facility />
+        {/* <Facility /> */}
+        <Footer />
       </div>
       {/* <div>{facilities[0].name}</div> */}
     </div>

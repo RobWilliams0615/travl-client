@@ -39,6 +39,34 @@
   color: #61dafb;
 }
 
+.footer {
+  background: rgb(40, 93, 172);
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  padding: 25px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 15px;
+  width: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.fa fa-github {
+  text-align: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
