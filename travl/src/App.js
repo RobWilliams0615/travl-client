@@ -9,37 +9,38 @@ import Nav from './components/Nav';
 import Users from './components/Users';
 import AddFacility from './components/AddFacility';
 import Footer from './components/Footer';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import FacilityDetails from './components/FacilityDetails';
 
-function App(props) {
-  console.log(props);
-  const [locations] = useState([]);
-  const [users] = useState([]);
-  const [facilities] = useState([]);
-  const delFacility = async () => {
-    const response =
-      await axios.delete`http://localhost:8000/facilities/${response}`();
-    window.location.reload();
-  };
+function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Nav />
-        {/* <h1>Welcome to the Travl App</h1> */}
       </header>
       <div>
-        <Routes>
-          {/* <button className="facility-btn" onClick={delFacility}>
-            Delete Facility
-          </button> */}
-          <Route path="/" element={<App />} exact />
-          <Route path="/facilities" element={<Facilities />} exact />
-          <Route path="/locations" element={<Locations />} exact />
-          <Route path="/addFacility" element={<AddFacility />} exact />
-        </Routes>
+        <Switch>
+          <Route exact path="/" component={<App />} />
+          {/* <Route exact path="/" component={(props) => <App {...props} />} /> */}
+          <Route
+            path="/facilities"
+            component={(props) => <Facilities {...props} />}
+          />
+          <Route
+            path="/facilities/:id"
+            component={(props) => <FacilityDetails {...props} />}
+          />
+          <Route
+            path="/locations"
+            component={(props) => <Locations {...props} />}
+          />
+          <Route
+            path="/addfacility"
+            component={(props) => <AddFacility {...props} />}
+          />
+        </Switch>
         <Footer />
       </div>
-      {/* <div>{facilities[0].name}</div> */}
     </div>
   );
 }

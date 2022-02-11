@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Facilities() {
+function Facilities(props) {
+  console.log(props);
   const [facilities, setFacilities] = useState([]);
   const [val, setVal] = useState('');
   const [newFacility, setNewFacility] = useState({
@@ -15,18 +16,27 @@ function Facilities() {
     acc_restroom: false,
     open_now: false
   });
+  const showFacility = (facilities) => {
+    props.history.push(`/facilities/${facilities.id}`);
+  };
   // check crud from previous projects
   useEffect(() => {
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
       setFacilities(response.data);
+      console.log(response);
     };
     getFacilities();
   }, []);
-
+  const delFacility = async () => {
+    const response =
+      await axios.delete`http://localhost:8000/facilities/${props.match.params.id}`();
+    window.location.reload();
+    console.log(response);
+  };
   return (
     <div className="fac-container">
-      <div className="fac-list">
+      <div className="fac-list" onClick={() => showFacility(facilities)}>
         {facilities.map((facilities) => (
           <ul>
             <li className="fac-name">{facilities.name}</li>
@@ -39,10 +49,7 @@ function Facilities() {
             <li>{facilities.acc_entrance}</li>
             <li>{facilities.acc_restroom}</li>
             <li>{facilities.open_now}</li>
-            <button
-              className="facility-btn"
-              // onClick={delFacility}
-            >
+            <button className="facility-btn" onClick={delFacility}>
               Delete Facility
             </button>
           </ul>

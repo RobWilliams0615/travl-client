@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Locations() {
+function Locations(props) {
+  console.log(props);
   const [locations, setLocations] = useState([]);
   useEffect(() => {
     const getLocations = async () => {

@@ -15,10 +15,10 @@ const AddFacility = (props) => {
     parking_info: '',
     acc_entrance: false,
     acc_restroom: false,
-    open_now: false
-    // user_id: 1
+    open_now: false,
+    user_id: 1
   });
-  // console.log(newFacility);
+
   const [validate, setValidate] = useState('');
 
   const addFacility = async (e) => {
@@ -37,16 +37,12 @@ const AddFacility = (props) => {
     ) {
       setValidate('Fields Required');
     } else {
-      console.log(newFacility);
       const response = await axios.post(
         `http://localhost:8000/facilities/`,
         newFacility
       );
       const resp = await axios.get('http://localhost:8000/facilities/');
-      console.log(resp);
-      let pushedEl = resp.data.slice(-1)[0].id;
-      props.history.push(`http://localhost:8000/facilities/${pushedEl}`);
-      window.location.reload();
+      props.history.push('/facilities/');
     }
   };
   const handleChange = (e) => {
@@ -58,11 +54,11 @@ const AddFacility = (props) => {
     setNewFacility({ ...newFacility, [e.target.name]: bool_val });
   };
   // let id = props.match.params.id;
-  const delFacility = async () => {
-    const response =
-      await axios.delete`http://localhost:8000/facilities/${response.data.facilities.id}`;
-    window.location.reload();
-  };
+  // const delFacility = async () => {
+  //   const response =
+  //     await axios.delete`http://localhost:8000/facilities/${data.facilities.id}`;
+  //   window.location.reload();
+  // };
 
   return (
     <div>
