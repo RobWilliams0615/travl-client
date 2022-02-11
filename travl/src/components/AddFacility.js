@@ -68,9 +68,6 @@ const AddFacility = (props) => {
     <div>
       <form className="create-form" onSubmit={addFacility}>
         <h3>Create Facility</h3>
-        <button className="facility-btn" onClick={delFacility}>
-          Delete Facility
-        </button>
         <input
           id="name"
           type="text"

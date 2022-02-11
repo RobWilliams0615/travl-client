@@ -39,6 +39,12 @@ function Facilities() {
             <li>{facilities.acc_entrance}</li>
             <li>{facilities.acc_restroom}</li>
             <li>{facilities.open_now}</li>
+            <button
+              className="facility-btn"
+              // onClick={delFacility}
+            >
+              Delete Facility
+            </button>
           </ul>
         ))}
       </div>
