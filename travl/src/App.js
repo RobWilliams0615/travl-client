@@ -30,7 +30,7 @@ function App() {
       </header>
       <div>
         <Switch>
-          <Route exact path="/" component={<App />} />
+          <Route exact path="/" />
           <Route
             exact
             path="/facilities"
