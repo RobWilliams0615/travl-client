@@ -16,6 +16,7 @@ function Facilities(props) {
     open_now: false
   });
   const showFacility = (facility) => {
+    console.log('banan' + facility.id);
     props.history.push(`/facilities/${facility.id}`);
   };
 

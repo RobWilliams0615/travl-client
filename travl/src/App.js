@@ -17,9 +17,11 @@ function App() {
   const [facilities, setFacilities] = useState([]);
 
   useEffect(() => {
+    console.log('test');
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
       setFacilities(response.data);
+      console.log(response.data);
     };
     getFacilities();
   }, []);
@@ -39,6 +41,11 @@ function App() {
               <Facilities {...props} facilities={facilities} />
             )}
           />
+          {/* <Route
+            exact
+            path="/facilities/:id/updateform/"
+            component={(props) => <UpdateForm {...props} />}
+          /> */}
           <Route
             path="/facilities/:id"
             component={(props) => (
@@ -52,11 +59,6 @@ function App() {
           <Route
             path="/addfacility"
             component={(props) => <AddFacility {...props} />}
-          />
-          <Route
-            exact
-            path="/facilities/updateform"
-            component={(props) => <UpdateForm {...props} />}
           />
         </Switch>
         <Footer />

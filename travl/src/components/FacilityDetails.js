@@ -3,13 +3,24 @@ import axios from 'axios';
 import UpdateForm from './UpdateForm';
 
 function FacilityDetails(props) {
+  console.log('taco');
   const [selectedFacility, setFacility] = useState('');
-  const [update, setUpdate] = useState(false);
-  const [display, setDisplay] = useState(true);
-  const [updateFacility, setUpdateFacility] = useState('');
+  const [updating, setUpdating] = useState(false);
+  const [updateFacility, setUpdateFacility] = useState({
+    name: '',
+    details: '',
+    address: '',
+    photo_url: '',
+    phone: '',
+    email: '',
+    user_id: '',
+    parking_info: '',
+    acc_entrance: '',
+    acc_restroom: '',
+    open_now: ''
+  });
   const toggleUpdate = () => {
-    props.history.push(`http://localhost:8000/updateform`);
-    window.location.reload();
+    setUpdating(!updating);
   };
 
   const handleChange = (e) => {
@@ -24,30 +35,32 @@ function FacilityDetails(props) {
   const updateUserFacility = async (e) => {
     e.preventDefault();
     const response = await axios.put(
-      `http://localhost:8000/facilities/${selectedFacility}`,
+      `http://localhost:8000/facilities/${selectedFacility.id}`,
       updateFacility
     );
-    // window.location.reload();
+    setFacility(response.data);
+    toggleUpdate();
   };
 
   const handleUpdate = (e) => {
     e.preventDefault();
     updateUserFacility();
-    props.history.push(`http://localhost:8000/facilities/${selectedFacility}`);
   };
 
-  useEffect(() => {
-    let selectedFacility = props.facilities.find(
-      (facility) => facility.id === parseInt(props.match.params.id)
+  const grabFacById = async () => {
+    console.log(props);
+    const response = await axios.get(
+      `http://localhost:8000/facilities/${props.match.params.id}`
     );
-    setFacility(selectedFacility);
+    setFacility(response.data);
+  };
+  useEffect(() => {
+    grabFacById();
   }, []);
 
   // restructure html for details
-  // update fac function
-  console.log(selectedFacility);
 
-  return selectedFacility ? (
+  return !updating ? (
     <div className="detail">
       <div className="detail-header">
         <img src={selectedFacility.photo_url} alt={selectedFacility.name} />
@@ -66,19 +79,15 @@ function FacilityDetails(props) {
       <button className="profile-btn" onClick={toggleUpdate}>
         Update Profile
       </button>
-      <div>{/* <UpdateForm /> */}</div>
     </div>
   ) : (
-    <div className="user-info">
-      <UpdateForm
-        {...props}
-        handleChange={handleChange}
-        handleBooleans={handleBooleans}
-        updateFacility={updateFacility}
-        updateUserProfile={updateUserFacility}
-        handleUpdate={handleUpdate}
-      />
-    </div>
+    <UpdateForm
+      {...props}
+      handleChange={handleChange}
+      handleBooleans={handleBooleans}
+      updateFacility={updateFacility}
+      updateUserFacility={updateUserFacility}
+    />
   );
 }
 

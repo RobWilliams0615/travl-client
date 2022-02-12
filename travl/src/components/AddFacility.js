@@ -53,7 +53,7 @@ const AddFacility = (props) => {
     let bool_val = e.target.value === 'true' ? true : false;
     setNewFacility({ ...newFacility, [e.target.name]: bool_val });
   };
-  // let id = props.match.params.id;
+  let id = props.match.params.id;
   // const delFacility = async () => {
   //   const response =
   //     await axios.delete`http://localhost:8000/facilities/${data.facilities.id}`;

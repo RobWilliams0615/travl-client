@@ -44,6 +44,14 @@ const UpdateForm = ({
             placeholder={'Enter facility address:'}
           ></input>
           <input
+            id="user_id"
+            type="number"
+            name="user_id"
+            onChange={handleChange}
+            value={updateFacility.user_id}
+            placeholder={'Select User:'}
+          ></input>
+          <input
             id="phone"
             type="text"
             name="phone"
