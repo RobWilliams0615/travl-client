@@ -11,6 +11,7 @@ import AddFacility from './components/AddFacility';
 import Footer from './components/Footer';
 import { Route, Switch } from 'react-router-dom';
 import FacilityDetails from './components/FacilityDetails';
+import UpdateForm from './components/UpdateForm';
 
 function App() {
   const [facilities, setFacilities] = useState([]);
@@ -51,6 +52,11 @@ function App() {
           <Route
             path="/addfacility"
             component={(props) => <AddFacility {...props} />}
+          />
+          <Route
+            exact
+            path="/facilities/updateform"
+            component={(props) => <UpdateForm {...props} />}
           />
         </Switch>
         <Footer />

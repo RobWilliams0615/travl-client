@@ -5,12 +5,12 @@ import UpdateForm from './UpdateForm';
 function FacilityDetails(props) {
   const [selectedFacility, setFacility] = useState('');
   const [update, setUpdate] = useState(false);
+  const [display, setDisplay] = useState(true);
   const [updateFacility, setUpdateFacility] = useState('');
   const toggleUpdate = () => {
-    setUpdate(!update);
+    props.history.push(`http://localhost:8000/updateform`);
+    window.location.reload();
   };
-
-  console.log(props);
 
   const handleChange = (e) => {
     setUpdateFacility({ ...updateFacility, [e.target.name]: e.target.value });
@@ -42,9 +42,11 @@ function FacilityDetails(props) {
     );
     setFacility(selectedFacility);
   }, []);
-  console.log(selectedFacility);
+
   // restructure html for details
   // update fac function
+  console.log(selectedFacility);
+
   return selectedFacility ? (
     <div className="detail">
       <div className="detail-header">
@@ -64,6 +66,7 @@ function FacilityDetails(props) {
       <button className="profile-btn" onClick={toggleUpdate}>
         Update Profile
       </button>
+      <div>{/* <UpdateForm /> */}</div>
     </div>
   ) : (
     <div className="user-info">
