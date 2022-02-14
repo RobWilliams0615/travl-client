@@ -61,6 +61,13 @@
   max-width: 500px;
 }
 
+.facility-btn:hover {
+  background: white;
+  color: grey;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
 .detail-header img,
 ul img {
   border-radius: 15px;
@@ -77,6 +84,7 @@ ul img {
 .detail-header img:hover,
 ul img:hover {
   transform: scale(1.01);
+  transition: all 0.3s ease;
 }
 
 ul img:hover {
