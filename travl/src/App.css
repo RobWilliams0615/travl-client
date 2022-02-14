@@ -10,7 +10,7 @@
 }
 
 .fac-container {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -53,6 +53,8 @@
 
 ul img {
   border-radius: 15px;
+  max-height: 40vh;
+  margin-top: 2%;
 }
 
 ul button {

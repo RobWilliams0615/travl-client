@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Facilities(props) {
-  console.log(props);
   const [val, setVal] = useState('');
   const [newFacility, setNewFacility] = useState({
     name: '',
@@ -16,7 +15,6 @@ function Facilities(props) {
     open_now: false
   });
   const showFacility = (facility) => {
-    console.log('banan' + facility.id);
     props.history.push(`/facilities/${facility.id}`);
   };
 

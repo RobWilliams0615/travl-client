@@ -3,7 +3,6 @@ import axios from 'axios';
 import Facilities from './Facilities';
 
 const AddFacility = (props) => {
-  console.log(props);
   const [facilities] = useState([]);
   const [newFacility, setNewFacility] = useState({
     name: '',

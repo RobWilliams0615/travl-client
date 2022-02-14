@@ -17,11 +17,9 @@ function App() {
   const [facilities, setFacilities] = useState([]);
 
   useEffect(() => {
-    console.log('test');
     const getFacilities = async () => {
       const response = await axios.get('http://localhost:8000/facilities/');
       setFacilities(response.data);
-      console.log(response.data);
     };
     getFacilities();
   }, []);

@@ -3,7 +3,6 @@ import axios from 'axios';
 import UpdateForm from './UpdateForm';
 
 function FacilityDetails(props) {
-  console.log('taco');
   const [selectedFacility, setFacility] = useState('');
   const [updating, setUpdating] = useState(false);
   const [updateFacility, setUpdateFacility] = useState({
@@ -48,7 +47,6 @@ function FacilityDetails(props) {
   };
 
   const grabFacById = async () => {
-    console.log(props);
     const response = await axios.get(
       `http://localhost:8000/facilities/${props.match.params.id}`
     );
