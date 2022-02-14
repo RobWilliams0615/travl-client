@@ -62,13 +62,13 @@ function FacilityDetails(props) {
         <div>
           <h1>{selectedFacility.name}</h1>
           <p>{selectedFacility.details}</p>
-          <h1>{selectedFacility.address}</h1>
-          <h1>{selectedFacility.phone}</h1>
-          <h1>{selectedFacility.email}</h1>
-          <h1>{selectedFacility.parking_info}</h1>
-          <h1>{selectedFacility.acc_entrance}</h1>
-          <h1>{selectedFacility.acc_restroom}</h1>
-          <h1>{selectedFacility.open_now}</h1>
+          <h3>{selectedFacility.address}</h3>
+          <h3>{selectedFacility.phone}</h3>
+          <h3>{selectedFacility.email}</h3>
+          <h3>{selectedFacility.parking_info}</h3>
+          <h3>{selectedFacility.acc_entrance}</h3>
+          <h3>{selectedFacility.acc_restroom}</h3>
+          <h3>{selectedFacility.open_now}</h3>
         </div>
       </div>
       <button className="profile-btn" onClick={toggleUpdate}>

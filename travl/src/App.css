@@ -61,7 +61,8 @@
   max-width: 500px;
 }
 
-.facility-btn:hover {
+.facility-btn:hover,
+.profile-btn:hover {
   background: white;
   color: grey;
   font-weight: 900;
@@ -85,6 +86,7 @@ ul img {
 ul img:hover {
   transform: scale(1.01);
   transition: all 0.3s ease;
+  box-shadow: 0 0 15px #797272a4;
 }
 
 ul img:hover {
@@ -127,6 +129,7 @@ li {
   display: inline-block !important;
   border-radius: 25px;
   margin-bottom: 24%;
+  opacity: 0.7;
 }
 .create-form h3 {
   color: rgb(96, 97, 99);
@@ -190,4 +193,8 @@ li {
   .create-form ul {
     padding: 26px;
   }
+}
+
+.detail {
+  margin-bottom: 13%;
 }
