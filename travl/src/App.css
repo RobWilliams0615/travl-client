@@ -71,7 +71,7 @@
 
 .detail-header img,
 ul img {
-  border-radius: 15px;
+  border-radius: 4px;
   max-height: 30vh;
   max-width: 22vw;
   margin-top: 2%;
@@ -80,6 +80,16 @@ ul img {
 
 .detail-header {
   margin-top: 3%;
+  border: 1px solid rgba(112, 111, 111, 0.082);
+  width: 500px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.detail-header:hover {
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #797272a4;
 }
 
 .detail-header img:hover,
@@ -87,6 +97,11 @@ ul img:hover {
   transform: scale(1.01);
   transition: all 0.3s ease;
   box-shadow: 0 0 15px #797272a4;
+}
+.detail {
+  margin-bottom: 13%;
+  justify-content: center;
+  display: flex;
 }
 
 ul img:hover {
@@ -193,8 +208,8 @@ li {
   .create-form ul {
     padding: 26px;
   }
-}
-
-.detail {
-  margin-bottom: 13%;
+  .detail-header {
+    margin-top: 15%;
+    margin-left: 10%;
+  }
 }

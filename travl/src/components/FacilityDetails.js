@@ -69,11 +69,11 @@ function FacilityDetails(props) {
           <h3>{selectedFacility.acc_entrance}</h3>
           <h3>{selectedFacility.acc_restroom}</h3>
           <h3>{selectedFacility.open_now}</h3>
+          <button className="profile-btn" onClick={toggleUpdate}>
+            Update Profile
+          </button>
         </div>
       </div>
-      <button className="profile-btn" onClick={toggleUpdate}>
-        Update Profile
-      </button>
     </div>
   ) : (
     <UpdateForm
