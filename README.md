@@ -19,11 +19,11 @@ I have used django for the backend and React for the front end.
 
 ### **Screen Shots**
 
-![1](https://imgur.com/jwfHHTY)
+![1](https://i.postimg.cc/BvZnmwwf/Screen-Shot-2022-02-14-at-9-49-34-AM.png)
 
-![2](https://imgur.com/pJGpqps)
+![2](https://i.postimg.cc/d1pQtQQJ/Screen-Shot-2022-02-14-at-9-49-45-AM.png)
 
-![3](https://imgur.com/kGJP193)
+![3](https://i.postimg.cc/WbRpB4fn/Screen-Shot-2022-02-14-at-9-49-59-AM.png)
 
 ### **_*Future Updates*_**
 
