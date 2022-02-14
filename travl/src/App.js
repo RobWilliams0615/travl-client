@@ -38,11 +38,6 @@ function App() {
               <Facilities {...props} facilities={facilities} />
             )}
           />
-          {/* <Route
-            exact
-            path="/facilities/:id/updateform/"
-            component={(props) => <UpdateForm {...props} />}
-          /> */}
           <Route
             path="/facilities/:id"
             component={(props) => (
