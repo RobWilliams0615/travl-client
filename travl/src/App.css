@@ -16,24 +16,27 @@
   text-align: center;
 }
 .App-header {
-  background: rgb(40, 93, 172);
+  background: white;
+  /* background: rgb(40, 93, 172); */
   height: 15px;
   padding: 15px;
   width: 100%;
   position: fixed;
-  border-bottom: 2px black solid;
+  border-bottom: 1px black solid;
 }
 
 .App-header a {
   text-decoration: none;
-  color: white;
-  padding: 15px;
-  transition: all 0.3s ease;
+  color: grey;
+  padding: 12px;
 }
 
 .App-header a:hover {
   background: white;
-  color: rgb(40, 93, 172);
+  color: rgb(96, 97, 99);
+  transition: all 0.3s ease;
+  border-bottom: 3px black solid;
+  font-weight: bold;
 }
 .App-link {
   color: #61dafb;
@@ -54,30 +57,41 @@
   max-width: 500px;
 }
 
+.detail-header img,
 ul img {
   border-radius: 15px;
   max-height: 40vh;
   max-width: 45vw;
   margin-top: 2%;
+  object-fit: cover;
 }
 
+.detail-header {
+  margin-top: 3%;
+}
+
+.detail-header img:hover,
 ul img:hover {
   transform: scale(1.01);
 }
 
-ul button {
+ul button,
+.profile-btn {
   background: white;
   border-radius: 5px;
   padding: 2px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
+.profile-btn,
 ul button:hover {
   transform: scale(1.06);
 }
 .fac-name {
   font-size: larger;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 li {
   list-style-type: none;
@@ -106,13 +120,12 @@ li {
   width: 100%;
 }
 .footer {
-  background: rgb(40, 93, 172);
+  background: rgb(248, 248, 248);
   height: 10px;
   display: flex;
   text-decoration: none;
   padding: 25px;
   width: 100%;
-  color: white;
   justify-content: center;
   margin: 0;
 }
@@ -123,9 +136,13 @@ li {
   width: 10px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: grey;
 }
 
+.fa:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.5);
+}
 .fa fa-github {
   text-align: center;
 }

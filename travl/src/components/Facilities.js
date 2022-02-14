@@ -35,9 +35,9 @@ function Facilities(props) {
             <li>{facility.address}</li>
             <li>{facility.phone}</li>
             <li>{facility.email}</li>
-            <li>{facility.acc_entrance}</li>
-            <li>{facility.acc_restroom}</li>
-            <li>{facility.open_now}</li>
+            <li>Accessible entrance:{facility.acc_entrance.toString()}</li>
+            <li>Accessible restroom:{facility.acc_restroom.toString()}</li>
+            <li>Open Now:{facility.open_now.toString()}</li>
             <button className="dtl-btn" onClick={() => showFacility(facility)}>
               Details
             </button>

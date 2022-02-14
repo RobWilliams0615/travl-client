@@ -42,6 +42,7 @@ const AddFacility = (props) => {
       );
       const resp = await axios.get('http://localhost:8000/facilities/');
       props.history.push('/facilities/');
+      console.log(resp);
     }
   };
   const handleChange = (e) => {
