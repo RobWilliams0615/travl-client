@@ -84,7 +84,8 @@ ul img:hover {
 }
 
 ul button,
-.profile-btn {
+.profile-btn,
+.crt-fac-btn {
   background: white;
   border-radius: 5px;
   padding: 2px;
@@ -114,10 +115,13 @@ li {
   margin-top: 5%;
   padding: 2rem;
   height: 50%;
-  background-color: rgba(220, 230, 247, 0.4);
+  background-color: rgba(189, 200, 221, 0.4);
   display: inline-block !important;
   border-radius: 25px;
   margin-bottom: 24%;
+}
+.create-form h3 {
+  color: rgb(96, 97, 99);
 }
 .create-form input {
   display: block;
@@ -160,7 +164,8 @@ li {
 }
 
 @media (max-width: 390px) {
-  .fac-list {
+  .fac-list,
+  .loc-list {
     display: flex;
     justify-content: center;
     text-align: center;
