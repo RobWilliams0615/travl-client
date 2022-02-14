@@ -61,7 +61,7 @@ function FacilityDetails(props) {
         <img src={selectedFacility.photo_url} alt={selectedFacility.name} />
         <div>
           <h1>{selectedFacility.name}</h1>
-          <h1>{selectedFacility.details}</h1>
+          <p>{selectedFacility.details}</p>
           <h1>{selectedFacility.address}</h1>
           <h1>{selectedFacility.phone}</h1>
           <h1>{selectedFacility.email}</h1>

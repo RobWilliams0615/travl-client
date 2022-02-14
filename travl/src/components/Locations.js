@@ -7,7 +7,6 @@ function Locations(props) {
     const getLocations = async () => {
       const response = await axios.get('http://localhost:8000/locations/');
       setLocations(response.data);
-      console.log(response);
     };
 
     getLocations();
