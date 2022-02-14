@@ -21,12 +21,14 @@
   padding: 15px;
   width: 100%;
   position: fixed;
+  border-bottom: 2px black solid;
 }
 
 .App-header a {
   text-decoration: none;
   color: white;
   padding: 15px;
+  transition: all 0.3s ease;
 }
 
 .App-header a:hover {
@@ -36,7 +38,8 @@
 .App-link {
   color: #61dafb;
 }
-.fac-list {
+.fac-list,
+.loc-list {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -58,11 +61,19 @@ ul img {
   margin-top: 2%;
 }
 
+ul img:hover {
+  transform: scale(1.01);
+}
+
 ul button {
   background: white;
   border-radius: 5px;
   padding: 2px;
   margin-left: 5px;
+}
+
+ul button:hover {
+  transform: scale(1.06);
 }
 .fac-name {
   font-size: larger;
@@ -127,6 +138,12 @@ li {
     flex-direction: column;
     margin-top: 15%;
   }
-  ul img {
+  .create-form {
+    margin-left: 15%;
+    margin-bottom: 10%;
+    margin-top: 20%;
+  }
+  .create-form ul {
+    padding: 26px;
   }
 }
