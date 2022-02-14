@@ -153,12 +153,14 @@ li {
   text-align: center;
   text-decoration: none;
   color: grey;
+  margin-top: -10px;
 }
 
 .fa:hover {
   transition: all 0.3s ease;
   transform: scale(1.5);
 }
+
 .fa fa-github {
   text-align: center;
 }
