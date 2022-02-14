@@ -79,6 +79,10 @@ ul img:hover {
   transform: scale(1.01);
 }
 
+ul img:hover {
+  cursor: pointer;
+}
+
 ul button,
 .profile-btn {
   background: white;

@@ -30,7 +30,10 @@ function Facilities(props) {
         {props.facilities.map((facility) => (
           <ul>
             <li className="fac-name">{facility.name}</li>
-            <img src={facility.photo_url} />
+            <img
+              src={facility.photo_url}
+              onClick={() => showFacility(facility)}
+            />
             <li>{facility.details}</li>
             <li>{facility.address}</li>
             <li>{facility.phone}</li>
@@ -38,9 +41,6 @@ function Facilities(props) {
             <li>Accessible entrance: {facility.acc_entrance.toString()}</li>
             <li>Accessible restroom: {facility.acc_restroom.toString()}</li>
             <li>Open Now: {facility.open_now.toString()}</li>
-            <button className="dtl-btn" onClick={() => showFacility(facility)}>
-              Details
-            </button>
             <button
               className="facility-btn"
               onClick={() => delFacility(facility)}
