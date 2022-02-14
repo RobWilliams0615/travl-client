@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
+    <div className="foot-cont">
       <nav className="footer">
         <a
           href="https://github.com/RobWilliams0615"

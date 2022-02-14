@@ -9,11 +9,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 .fac-container {
   margin-top: 10%;
   display: flex;
@@ -49,10 +44,23 @@
   column-gap: 20px;
   row-gap: 20px;
   max-width: 100vw;
-  max-height: 100vh;
   margin: 0 auto;
 }
 
+.fac-list ul {
+  max-width: 500px;
+}
+
+ul img {
+  border-radius: 15px;
+}
+
+ul button {
+  background: white;
+  border-radius: 5px;
+  padding: 2px;
+  margin-left: 5px;
+}
 .fac-name {
   font-size: larger;
   font-weight: bolder;
@@ -81,20 +89,20 @@ li {
   border-radius: 5px;
   margin: 0.5px;
 }
+
+.foot-cont {
+  width: 100%;
+}
 .footer {
   background: rgb(40, 93, 172);
   height: 10px;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
-  text-align: center;
   text-decoration: none;
   padding: 25px;
   width: 100%;
   color: white;
-  display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .fa {

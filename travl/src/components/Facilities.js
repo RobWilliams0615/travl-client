@@ -34,7 +34,6 @@ function Facilities(props) {
             <li className="fac-name">{facility.name}</li>
             <img src={facility.photo_url} />
             <li>{facility.details}</li>
-            <li>{facility.photo_url}</li>
             <li>{facility.address}</li>
             <li>{facility.phone}</li>
             <li>{facility.email}</li>
