@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function Users() {
   const [users, setUsers] = useState([]);
-  // check crud from previous projects
+
   useEffect(() => {
     const getUsers = async () => {
       const response = await axios.get('http://localhost:8000/users/');

@@ -55,9 +55,6 @@ function FacilityDetails(props) {
   useEffect(() => {
     grabFacById();
   }, []);
-
-  // restructure html for details
-
   return !updating ? (
     <div className="detail">
       <div className="detail-header">
