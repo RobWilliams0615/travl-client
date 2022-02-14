@@ -34,9 +34,15 @@ function Facilities(props) {
               src={facility.photo_url}
               onClick={() => showFacility(facility)}
             />
-            <li>Accessible entrance: {facility.acc_entrance.toString()}</li>
-            <li>Accessible restroom: {facility.acc_restroom.toString()}</li>
-            <li>Open Now: {facility.open_now.toString()}</li>
+            <li className="fac-bool">
+              Accessible entrance: {facility.acc_entrance.toString()}
+            </li>
+            <li className="fac-bool">
+              Accessible restroom: {facility.acc_restroom.toString()}
+            </li>
+            <li className="fac-bool">
+              Open Now: {facility.open_now.toString()}
+            </li>
 
             <button
               className="facility-btn"
